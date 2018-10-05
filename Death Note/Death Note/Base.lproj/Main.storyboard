@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQ8-hL-hoO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQ8-hL-hoO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Death Note-->
         <scene sceneID="tne-QT-ifu">
@@ -36,13 +30,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL1-ms-bmx">
-                                                    <rect key="frame" x="15" y="11" width="197" height="64"/>
+                                                    <rect key="frame" x="15" y="11" width="158" height="64"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Death Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-Bj-huA">
-                                                    <rect key="frame" x="15" y="85" width="384" height="21"/>
+                                                    <rect key="frame" x="15" y="85" width="345" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -148,26 +142,25 @@
                                 </date>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Death Description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-OW-9OR">
-                                <rect key="frame" x="5" y="252" width="365" height="415"/>
+                                <rect key="frame" x="5" y="252" width="365" height="196"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="AJZ-Ji-ww7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NQb-OW-9OR" firstAttribute="top" secondItem="P90-TH-u5v" secondAttribute="bottom" constant="5" id="2UY-Qo-kc0"/>
-                            <constraint firstItem="KYW-4b-81C" firstAttribute="trailing" secondItem="NQb-OW-9OR" secondAttribute="trailing" constant="5" id="8M8-3U-JV5"/>
-                            <constraint firstItem="KYW-4b-81C" firstAttribute="trailing" secondItem="NQb-OW-9OR" secondAttribute="trailing" constant="5" id="9Ol-9I-ApQ"/>
+                            <constraint firstItem="NQb-OW-9OR" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="Epg-xP-POz"/>
                             <constraint firstItem="M3d-aE-n2G" firstAttribute="top" secondItem="KYW-4b-81C" secondAttribute="top" id="Gsd-at-5eR"/>
                             <constraint firstItem="M3d-aE-n2G" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="P5A-b2-sLi"/>
-                            <constraint firstItem="NQb-OW-9OR" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="YUR-fu-km6"/>
-                            <constraint firstItem="NQb-OW-9OR" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="aeC-F2-RNM"/>
-                            <constraint firstItem="KYW-4b-81C" firstAttribute="bottom" secondItem="NQb-OW-9OR" secondAttribute="bottom" id="bJz-E1-4WW"/>
+                            <constraint firstItem="KYW-4b-81C" firstAttribute="trailing" secondItem="NQb-OW-9OR" secondAttribute="trailing" constant="5" id="dMq-Tz-spT"/>
                             <constraint firstAttribute="trailing" secondItem="M3d-aE-n2G" secondAttribute="trailing" constant="5" id="lFE-Hz-rab"/>
+                            <constraint firstItem="NQb-OW-9OR" firstAttribute="top" secondItem="P90-TH-u5v" secondAttribute="bottom" constant="5" id="ngO-6Z-rzr"/>
                             <constraint firstItem="KYW-4b-81C" firstAttribute="trailing" secondItem="P90-TH-u5v" secondAttribute="trailing" constant="5" id="pkR-Ti-tjU"/>
                             <constraint firstItem="P90-TH-u5v" firstAttribute="top" secondItem="M3d-aE-n2G" secondAttribute="bottom" constant="5" id="wC8-lR-jqW"/>
-                            <constraint firstItem="NQb-OW-9OR" firstAttribute="top" secondItem="P90-TH-u5v" secondAttribute="bottom" constant="5" id="z2s-Xw-CSy"/>
                             <constraint firstItem="P90-TH-u5v" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="zeB-oY-4PJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KYW-4b-81C"/>

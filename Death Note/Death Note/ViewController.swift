@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.nameLabel?.numberOfLines = 0
         cell.deathDescriptionLabel?.numberOfLines = 0
         cell.dataLabel?.numberOfLines = 0
-        displayNotes.rowHeight = UITableViewAutomaticDimension
+        displayNotes.rowHeight = UITableView.automaticDimension
         displayNotes.estimatedRowHeight = 44.0
         
         cell.backgroundColor = UIColor.lightGray
@@ -53,6 +53,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func userAddedPerson(Name: String, Description: String, Date: String) {
         let newDeath: (String, String, String) = (Name, Description, Date)
         Data.deathInfo.append(newDeath)
+        refreshTable()
+    }
+    
+    func refreshTable() {
+        
+        displayNotes.reloadData()
+        
     }
     
     
