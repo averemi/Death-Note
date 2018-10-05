@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.backgroundColor = UIColor.lightGray
         cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
+        cell.layer.borderWidth = 5
    //     cell.textLabel?.text = Data.deathInfo
         return cell
     }

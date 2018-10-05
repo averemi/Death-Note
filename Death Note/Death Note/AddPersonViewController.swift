@@ -25,26 +25,23 @@ class AddPersonViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         
-        let name = nameAdd.text!
-     //   let date = String(describing: dateAdd.date)
-        
-        let dateFormatter = DateFormatter()//3
-        
-        let theDateFormat = DateFormatter.Style.short //5
-        let theTimeFormat = DateFormatter.Style.short//6
-        
-        dateFormatter.dateStyle = theDateFormat//8
-        dateFormatter.timeStyle = theTimeFormat//9
-        
-        let date = dateFormatter.string(from: dateAdd.date)//11
-      //  let date = dateFormatter
-        let description = descriptionAdd.text!
-        
-        print("Name: \(name)")
-        print("Date: \(date)")
-        print("Description: \(description)")
-        
-        delegate?.userAddedPerson(Name: name, Description: description, Date: date)
+        if let name = nameAdd.text, !name.isEmpty {
+
+            let description = descriptionAdd.text ?? ""
+            
+            let dateFormatter = DateFormatter()
+            let theDateFormat = DateFormatter.Style.short
+            let theTimeFormat = DateFormatter.Style.short
+            dateFormatter.dateStyle = theDateFormat
+            dateFormatter.timeStyle = theTimeFormat
+            let date = dateFormatter.string(from: dateAdd.date)
+            
+            print("Name: \(String(describing: name))")
+            print("Date: \(date)")
+            print("Description: \(description)")
+            
+            delegate?.userAddedPerson(Name: name, Description: description, Date: date)
+        }
         
         navigationController?.popViewController(animated: true)
         
@@ -55,15 +52,15 @@ class AddPersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameAdd.placeholder = "Name"
+        
         descriptionAdd.layer.borderWidth = 1
         descriptionAdd.layer.borderColor = UIColor.black.cgColor
         
-        let currentDate = NSDate()  //5 -  get the current date
-        dateAdd.minimumDate = currentDate as Date  //6- set the current date/time as a minimum
-        dateAdd.date = currentDate as Date //7 - defaults to current time but shows how to use it.
+        let currentDate = NSDate()
+        dateAdd.minimumDate = currentDate as Date
+        dateAdd.date = currentDate as Date
         
-        
-
         // Do any additional setup after loading the view.
     }
 
