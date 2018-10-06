@@ -103,13 +103,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="27f-Fl-Ivl" kind="show" identifier="addPerson" id="CLG-4D-E94"/>
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="displayNotes" destination="BGe-4V-2vT" id="4FP-ff-oAq"/>
@@ -127,55 +132,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M3d-aE-n2G">
-                                <rect key="frame" x="5" y="64" width="365" height="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="P90-TH-u5v">
-                                <rect key="frame" x="5" y="99" width="365" height="148"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="148" id="sNU-Lm-G0i"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="560362390.59628797">
-                                    <!--2018-10-04 16:13:10 +0000-->
-                                </date>
-                            </datePicker>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-OW-9OR">
-                                <rect key="frame" x="5" y="252" width="365" height="196"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zs6-MJ-z1P" userLabel="Items View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M3d-aE-n2G">
+                                        <rect key="frame" x="5" y="0.0" width="365" height="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="P90-TH-u5v">
+                                        <rect key="frame" x="5" y="35" width="365" height="148"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="365" id="BNT-Vi-sDi"/>
+                                            <constraint firstAttribute="height" constant="148" id="sNU-Lm-G0i"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="560362390.59628797">
+                                            <!--2018-10-04 16:13:10 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-OW-9OR">
+                                        <rect key="frame" x="5" y="188" width="365" height="196"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="196" id="AJZ-Ji-ww7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="itemsView" label="itemsView">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="196" id="AJZ-Ji-ww7"/>
+                                    <constraint firstItem="NQb-OW-9OR" firstAttribute="top" secondItem="P90-TH-u5v" secondAttribute="bottom" constant="5" id="3al-Wt-0tz"/>
+                                    <constraint firstAttribute="trailing" secondItem="P90-TH-u5v" secondAttribute="trailing" constant="5" id="9aE-e6-aiv"/>
+                                    <constraint firstAttribute="trailing" secondItem="M3d-aE-n2G" secondAttribute="trailing" constant="5" id="Ebz-hV-EP9"/>
+                                    <constraint firstItem="P90-TH-u5v" firstAttribute="leading" secondItem="Zs6-MJ-z1P" secondAttribute="leading" constant="5" id="Mc7-z2-Zzs"/>
+                                    <constraint firstItem="M3d-aE-n2G" firstAttribute="leading" secondItem="Zs6-MJ-z1P" secondAttribute="leading" constant="5" id="Nm9-68-pk2"/>
+                                    <constraint firstItem="NQb-OW-9OR" firstAttribute="leading" secondItem="Zs6-MJ-z1P" secondAttribute="leading" constant="5" id="jEK-2I-DMT"/>
+                                    <constraint firstAttribute="trailing" secondItem="NQb-OW-9OR" secondAttribute="trailing" constant="5" id="tTd-eL-XZ8"/>
+                                    <constraint firstItem="P90-TH-u5v" firstAttribute="top" secondItem="M3d-aE-n2G" secondAttribute="bottom" constant="5" id="tnb-Ph-mQB"/>
+                                    <constraint firstItem="M3d-aE-n2G" firstAttribute="top" secondItem="Zs6-MJ-z1P" secondAttribute="top" id="zmu-s2-bre"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NQb-OW-9OR" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="Epg-xP-POz"/>
-                            <constraint firstItem="M3d-aE-n2G" firstAttribute="top" secondItem="KYW-4b-81C" secondAttribute="top" id="Gsd-at-5eR"/>
-                            <constraint firstItem="M3d-aE-n2G" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="P5A-b2-sLi"/>
-                            <constraint firstItem="KYW-4b-81C" firstAttribute="trailing" secondItem="NQb-OW-9OR" secondAttribute="trailing" constant="5" id="dMq-Tz-spT"/>
-                            <constraint firstAttribute="trailing" secondItem="M3d-aE-n2G" secondAttribute="trailing" constant="5" id="lFE-Hz-rab"/>
-                            <constraint firstItem="NQb-OW-9OR" firstAttribute="top" secondItem="P90-TH-u5v" secondAttribute="bottom" constant="5" id="ngO-6Z-rzr"/>
-                            <constraint firstItem="KYW-4b-81C" firstAttribute="trailing" secondItem="P90-TH-u5v" secondAttribute="trailing" constant="5" id="pkR-Ti-tjU"/>
-                            <constraint firstItem="P90-TH-u5v" firstAttribute="top" secondItem="M3d-aE-n2G" secondAttribute="bottom" constant="5" id="wC8-lR-jqW"/>
-                            <constraint firstItem="P90-TH-u5v" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" constant="5" id="zeB-oY-4PJ"/>
+                            <constraint firstItem="Zs6-MJ-z1P" firstAttribute="trailing" secondItem="KYW-4b-81C" secondAttribute="trailing" id="7yS-cQ-vat"/>
+                            <constraint firstItem="Zs6-MJ-z1P" firstAttribute="leading" secondItem="KYW-4b-81C" secondAttribute="leading" id="YKU-Kp-JZK"/>
+                            <constraint firstItem="Zs6-MJ-z1P" firstAttribute="bottom" secondItem="KYW-4b-81C" secondAttribute="bottom" id="buM-pL-ROD"/>
+                            <constraint firstItem="Zs6-MJ-z1P" firstAttribute="top" secondItem="KYW-4b-81C" secondAttribute="top" id="ruf-NB-Gxe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KYW-4b-81C"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Person" id="hk9-Rj-0Ni">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Crf-gh-Q5T">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="donePressed:" destination="27f-Fl-Ivl" id="iNr-n3-A9m"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="dateAdd" destination="P90-TH-u5v" id="9bU-g2-vfP"/>
                         <outlet property="descriptionAdd" destination="NQb-OW-9OR" id="Ewc-rp-KGj"/>
+                        <outlet property="itemsView" destination="Zs6-MJ-z1P" id="Zny-dz-c8r"/>
                         <outlet property="nameAdd" destination="M3d-aE-n2G" id="J7N-H3-PLk"/>
                     </connections>
                 </viewController>
@@ -202,4 +229,5 @@
             <point key="canvasLocation" x="-364" y="134"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

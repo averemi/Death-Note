@@ -17,6 +17,7 @@ class AddPersonViewController: UIViewController {
     
     var delegate : AddPersonDelegate?
     
+    @IBOutlet weak var itemsView: UIView!
     
     @IBOutlet weak var nameAdd: UITextField!
     @IBOutlet weak var dateAdd: UIDatePicker!
@@ -52,10 +53,17 @@ class AddPersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
+        self.view.backgroundColor = UIColor.black
+        self.itemsView.backgroundColor = UIColor(patternImage: UIImage(named: "paper.jpg")!)
+        
+        
         nameAdd.placeholder = "Name"
+        nameAdd.backgroundColor = UIColor.clear
         
         descriptionAdd.layer.borderWidth = 1
         descriptionAdd.layer.borderColor = UIColor.black.cgColor
+        descriptionAdd.backgroundColor = UIColor.clear
         
         let currentDate = NSDate()
         dateAdd.minimumDate = currentDate as Date

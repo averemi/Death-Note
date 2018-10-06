@@ -12,11 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+            // Override point for customization after application launch.
+        
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            // Sets shadow (line below the bar) to a blank image
+            UINavigationBar.appearance().shadowImage = UIImage()
+            // Sets the translucent background color
+            UINavigationBar.appearance().backgroundColor = .black
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().isTranslucent = true
+            return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
